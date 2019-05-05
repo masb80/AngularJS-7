@@ -1,0 +1,20 @@
+<h1 [ngClass]="{
+  'gray' : h1Style, 
+   'large' : !h1style
+}">  Home </h1> <!-- h1 styling will work only true-->
+
+<button (click)="firstClick()"> Click ME</button> <br>
+
+<button (click)="secondClick()"> Click ME second</button> <br>
+
+<button (click)="thirdClick()"> Click ME third</button>
+
+<br>
+
+<ul *ngIf="users">  <!-- ngOnInit() { theke data ta nilo-->
+  <li *ngFor="let user of users.data " >
+    <img [src]="user.avatar">
+    <p>{{user.first_name}} {{user.last_name}}</p>
+  </li>
+</ul>
+
