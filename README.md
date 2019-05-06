@@ -13,12 +13,18 @@ The app collect users data from the https://reqres.in/api/users' API.
 This is just for practice of
 
 --Templating
+
 --Styling
+
 --Components
+
 --Event Handling
+
 --Property Binding
+
 --Services
 --HTTP Client
+
 --Forms
 
 The css use as a scss file
