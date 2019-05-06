@@ -75,6 +75,22 @@ updateCar(name, price, id) {
     );
 }
 
+// end of updating the data in databases
+// starting the deleting data in databases
+
+deleteCar(id) {
+  this.success = '';
+  this.error   = '';
+  
+  this.dataService.delete(+id)
+    .subscribe(
+      (res: Car[]) => {
+        this.cars = res;
+        this.success = 'Deleted successfully';
+      },
+      (err) => this.error = err
+    );
+}
 
 
 }

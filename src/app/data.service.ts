@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpErrorResponse} from '@angular/common/http' // this is for collecting data from a API
+import {HttpClient, HttpErrorResponse, HttpParams} from '@angular/common/http' // this is for collecting data from a API
 
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
@@ -71,6 +71,21 @@ update(car: Car): Observable<Car[]> {
         theCar['model'] = car['model'];
       }
       return this.cars;
+    }),
+    catchError(this.handleError));
+}
+// deleting the updating data in databases
+
+delete(id: number): Observable<Car[]> {
+  const params = new HttpParams()
+    .set('id', id.toString());
+
+  return this.http.delete(`${this.baseUrl}/delete`, { params: params })
+    .pipe(map(res => {
+      const filteredCars = this.cars.filter((car) => {
+        return +car['id'] !== +id;
+      });
+      return this.cars = filteredCars;
     }),
     catchError(this.handleError));
 }
