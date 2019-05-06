@@ -9,5 +9,5 @@ import { Component } from '@angular/core';   // eta holo import ja top e thake
 // component logic ekhane thake ei component er
 
 export class AppComponent { 
-  title = 'ng7';
+  title = 'Byos';
 }

@@ -24,4 +24,19 @@ This is just for practice of
 The css use as a scss file
 
 
+You need to pust api directory in the apache server or /var/www/html/ 
+
+Then You need to start the Angular server in 4200 port using ng serve -o
+
+Angular7 rest of the code may put anywhere
+
+MySQL the database is cars and 
+
+mysql> select * from cars;
++----+--------+----------+
+| id | model  | price    |
++----+--------+----------+
+|  1 | subaru |       10 |
+|  2 | toyota | 10000000 |
++----+--------+----------+
 
