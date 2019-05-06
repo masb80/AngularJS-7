@@ -57,7 +57,23 @@ addCar(f) {
       (err) => this.error = err
     );
 }
+// end of adding the data in databases
 
+// starting of data updating in databases
+
+updateCar(name, price, id) {
+  this.success = '';
+  this.error = '';
+
+  this.dataService.update({ model: name.value, price: price.value, id: +id })
+    .subscribe(
+      (res) => {
+        this.cars    = res;
+        this.success = 'Updated successfully';
+      },
+      (err) => this.error = err
+    );
+}
 
 
 
