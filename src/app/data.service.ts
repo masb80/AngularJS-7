@@ -29,7 +29,7 @@ export class DataService {
   getAll(): Observable<Car[]> {
    
     // return this.http.get(`${this.baseUrl}/list.php`).pipe(
-    return this.http.get(`http://localhost/api/list.php`).pipe(
+    return this.http.get(`http://localhost/api/list`).pipe(
       map((res) => {
         this.cars = res['data'];
         return this.cars;
@@ -43,5 +43,18 @@ export class DataService {
     // return an observable with a user friendly message
     return throwError('Error! something went wrong.');
   }
+
+// until in here the gettin data fro dataases
+// for Store data in database or sending data to databases
+
+  store(car: Car): Observable<Car[]> {
+    return this.http.post(`${this.baseUrl}/store`, { data: car })
+      .pipe(map((res) => {
+        this.cars.push(res['data']);
+        return this.cars;
+      }),
+      catchError(this.handleError));
+}
+
 }
 

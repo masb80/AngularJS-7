@@ -1,7 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http'; // ekahne first httpClientModule load kora hoyeche
-import {ReactiveFormsModule} from '@angular/forms'
+import {ReactiveFormsModule, FormsModule} from '@angular/forms'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -25,7 +25,8 @@ import { CarsComponent } from './cars/cars.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule, // for http client
-    ReactiveFormsModule // for formas
+    ReactiveFormsModule, // for formas
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

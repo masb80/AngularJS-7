@@ -30,6 +30,37 @@ export class CarsComponent implements OnInit {
       }
     );
   }
+
+  // Until here is the GET cars from Databases
+
+  // folowing is the storing data in databases
+
+  car = new Car('', 0);
+
+
+addCar(f) {
+  this.error = '';
+  this.success = '';
+
+  this.dataService.store(this.car)
+    .subscribe(
+      (res: Car[]) => {
+        // Update the list of cars
+        this.cars = res;
+
+        // Inform the user
+        this.success = 'Created successfully';
+
+        // Reset the form
+        f.reset();
+      },
+      (err) => this.error = err
+    );
+}
+
+
+
+
 }
 
 
@@ -40,3 +71,5 @@ export class Car {
     price: number,
     id?:   number) {}
 }
+
+
