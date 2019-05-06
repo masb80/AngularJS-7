@@ -22,9 +22,10 @@ a {
     display: grid;
     grid-template-columns: 30% auto; 
 
-    a {
-        color: white;
-    }
+}
+
+.container a {
+    color: white;
 }
 
 section {
