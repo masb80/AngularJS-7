@@ -6,7 +6,7 @@ import{ DataService } from '../data.service'
 @Component({
   selector: 'app-cars',
   templateUrl: './cars.component.html',
-  styleUrls: ['./cars.component.css']
+  styleUrls: ['./cars.component.scss']
 })
 
 export class CarsComponent implements OnInit {
@@ -24,6 +24,7 @@ export class CarsComponent implements OnInit {
     this.dataService.getAll().subscribe(
       (res: Car[]) => {
         this.cars = res;
+        console.log(this.cars);
       },
       (err) => {
         this.error = err;

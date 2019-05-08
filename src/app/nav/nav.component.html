@@ -2,13 +2,45 @@
   <div class="container">
     <a routerLink="/" class="logo"> {{apptitle}}</a>
 
-  <nav>
-    <ul>
-      <li> <a routerLink="/" style="text-decoration-color:white">Home</a></li>
-      <li> <a routerLink="/about">About</a></li>
-      <li> <a routerLink="/contact">Contact us</a></li>
-      <li> <a routerLink="/cars">Cars</a></li>
-    </ul>
-  </nav>
-</div>
+    <nav>
+      <ul>
+       <!-- <li> <a routerLink="/" style="">Home</a></li> -->
+       <!-- <li> <a routerLink="/about">About</a></li> -->
+       <!-- <li> <a routerLink="/contact">Contact us</a></li> -->
+       <li> <a routerLink="/alert-lists">Alert Lists</a></li> 
+       <li> <a routerLink="/security-values">Security Values</a></li> 
+       <li> <a routerLink="/commands">Commands</a></li> 
+       
+        <li> <a routerLink="/users">Byos Users</a></li>
+        <!--
+        <li>
+               
+            <form [formGroup]="userForm">
+                <select formControlName="userControl">
+                  <option [value]="user" *ngFor="let user of cars"> {{user.model}}</option>
+                </select>
+               </form>  
+                   
+        </li>
+      
+        <li> <a routerLink="/cars">Users</a></li>
+      -->
+      <li>              
+          <form [formGroup]="userForm">
+            <select formControlName="userControl">
+              <option [value]="user" *ngFor="let user of users"> {{user.name}}</option>
+            </select>
+            </form>                   
+      </li>
+      <li> <a routerLink="/users">Last View</a></li>
+      <li>              
+          <form [formGroup]="userForm">
+            <select formControlName="userControl">
+              <option [value]="user" *ngFor="let user of users"> {{user.name}}</option>
+            </select>
+            </form>                   
+      </li>
+      </ul>
+    </nav>
+  </div>
 </header>

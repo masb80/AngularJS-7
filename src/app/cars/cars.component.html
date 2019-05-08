@@ -19,7 +19,7 @@
   <h2>The form</h2>
   <form #f="ngForm" name="theForm" (submit)="addCar(f)">
     <div class="form-group">
-      <label>Model</label>
+      <label>User</label>
       <input type="text"
             class="form-control"
             name="model"
@@ -28,15 +28,15 @@
             required
             pattern="^[a-zA-Z]+$">
       <span class="help-block danger" *ngIf="carModel.errors?.required && carModel.touched">
-        The model name is required
+        The user name is required
       </span>
       <span class="help-block danger" *ngIf="carModel.errors?.pattern && carModel.touched">
-        The model name can only contain the letters a-z or A-Z
+        The user name can only contain the letters a-z or A-Z
       </span>
     </div>
 
     <div class="form-group">
-      <label>Price</label>
+      <label>Age</label>
       <input type="number"
             class="form-control"
             name="price"
@@ -44,7 +44,7 @@
             [(ngModel)]="car.price"
             #carPrice="ngModel">
       <span class="help-block danger" *ngIf="carPrice.errors?.required && carPrice.touched">
-        The price is required
+        The age is required
       </span>
     </div>
 

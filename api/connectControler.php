@@ -4,7 +4,7 @@
 define('DB_HOST', 'localhost');
 define('DB_USER', 'root');
 define('DB_PASS', '1234');
-define('DB_NAME', 'cars');
+define('DB_NAME', 'controler');
 
 // Connect with the database.
 function connect()

@@ -5,13 +5,17 @@ import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 
 import { Car } from './cars/cars.component';
+import { User } from './users/users.component';
+import { Alerts } from './alert-lists/alert-lists.component';
 
 
 
 @Injectable({
   providedIn: 'root'
 })
-export class DataService {  
+export class DataService {
+  users: any;  
+  alerts: any;
 
   constructor(private http: HttpClient) { }
 
@@ -90,6 +94,42 @@ delete(id: number): Observable<Car[]> {
     catchError(this.handleError));
 }
 
+getByosUserAll(): Observable<User[]> {
+   
+  // return this.http.get(`${this.baseUrl}/list.php`).pipe(
+  return this.http.get(`http://localhost/api/listUser`).pipe(
+    map((res) => {
+      this.users = res['data'];
+      return this.users;
+  }),
+  catchError(this.handleErrorUser));
+}
+
+private handleErrorUser(error: HttpErrorResponse) {
+  console.log(error);
+ 
+  // return an observable with a user friendly message
+  return throwError('Error! something went wrong to get User data.');
+}
+
+// Getting alerts from databases
+
+getAlertsAll(): Observable<Alerts[]> {   
+  // return this.http.get(`${this.baseUrl}/list.php`).pipe(
+  return this.http.get(`http://localhost/api/listAlerts`).pipe(
+    map((res) => {
+      this.alerts = res['data'];
+      return this.alerts;
+  }),
+  catchError(this.handleErrorAlerts));
+}
+
+private handleErrorAlerts(error: HttpErrorResponse) {
+  console.log(error);
+ 
+  // return an observable with a user friendly message
+  return throwError('Error! something went wrong to get alerts data.');
+}
 
 }
 

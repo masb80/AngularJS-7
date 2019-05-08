@@ -1,0 +1,12 @@
+<!-- GET data from mysql server-->
+<div *ngIf="error">{{error}}</div>
+<div *ngIf="success">{{success}}</div>
+    
+<div id="theList">
+  <h2>Byos User lists</h2>
+  <ul>
+    <li *ngFor="let user of users">{{user.name}} </li>
+  </ul>
+</div>
+
+<!-- End of GET data from mysql server-->
