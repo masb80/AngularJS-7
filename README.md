@@ -1,3 +1,4 @@
+## This is an Angular7, PHP and MYSQL Project
 ## Development server
 
 Run `ng serve -o` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
